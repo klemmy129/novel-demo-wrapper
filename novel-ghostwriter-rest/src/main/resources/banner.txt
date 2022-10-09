@@ -1,0 +1,15 @@
+${AnsiBackground.BLACK}${AnsiColor.BRIGHT_YELLOW}
+
+     .-') _                    (`-.      ('-.                              ('-. .-.               .-')    .-') _     (`\ .-') /` _  .-')           .-') _     ('-.  _  .-')
+    ( ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW} ) )                 _(${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW}  )_  _(  ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW})                            ( ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW} )  /              ( ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW} ). (  ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW}) )     `.( ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW} ),'( \( -O )         (  ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW}) )  _(  ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW})( \( -${AnsiColor.RED}O${AnsiColor.BRIGHT_YELLOW} )
+,--./ ,--,'  .-'),-----. ,--(_/   ,. \(,------.,--.             ,----.    ,--. ,--. .-'),-----. (_)---\_)/     '._ ,--./  .--.   ,------.  ,-.-') /     '._(,------.,------.
+|   \ |  |\ ( ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW}'  .-.  '\   \   /(__/ |  .---'|  |.-')        '  .-./-') |  | |  |( ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW}'  .-.  '/    _ | |'--...__)|      |  |   |   /`. ' |  |${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW})|'--...__)|  .---'|   /`. '
+|    \|  | )/   |  | |  | \   \ /   /  |  |    |  | ${AnsiColor.RED}OO${AnsiColor.BRIGHT_YELLOW} )       |  |_( ${AnsiColor.RED}O${AnsiColor.BRIGHT_YELLOW}- )|   .|  |/   |  | |  |\  :` `. '--.  .--'|  |   |  |,  |  /  | | |  |  \'--.  .--'|  |    |  /  | |
+|  .     |/ \_) |  |\|  |  \   '   /, (|  '--. |  |`-' |       |  | .--, \|       |\_) |  |\|  | '..`''.)   |  |   |  |.'.|  |_) |  |_.' | |  |(_/   |  |  (|  '--. |  |_.' |
+|  |\    |    \ |  | |  |   \     /__) |  .--'(|  '---.'      (|  | '. (_/|  .-.  |  \ |  | |  |.-._)   \   |  |   |         |   |  .  '.',|  |_.'   |  |   |  .--' |  .  '.'
+|  | \   |     `'  '-'  '    \   /     |  `---.|      |        |  '--'  | |  | |  |   `'  '-'  '\       /   |  |   |   ,'.   |   |  |\  \(_|  |      |  |   |  `---.|  |\  \
+`--'  `--'       `-----'      `-'      `------'`------'         `------'  `--' `--'     `-----'  `-----'    `--'   '--'   '--'   `--' '--' `--'      `--'   `------'`--' '--'
+${Ansi.GREEN}::   ${spring.application.name} (${info.app.version})                                                                                                                                 ::
+${Ansi.GREEN}::   Spring Boot ${spring-boot.formatted-version}                                                                                                                                                 :: ${Ansi.DEFAULT}
+
+${AnsiStyle.NORMAL}

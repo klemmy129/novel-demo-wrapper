@@ -1,3 +1,18 @@
+spring:
+  application:
+    name: novel-ghostwriter-v1
+
+info:
+  app:
+    # Get the version from the POM file and injected into SpringDoc Info
+    version: @project.version@
+
+message-bus:
+  type: none
+
+novel-ideas:
+  url: ${NOVEL-IDEAS-URL:https://servername.devstuff.org:10443}
+
 server:
   servlet:
     context-path: "/ghost"
@@ -20,15 +35,10 @@ server:
     enabled-protocols:
       - TLSv1.2
       - TLSv1.3
-info:
-  app:
-    # Get the version from the POM file and injected into SpringDoc Info
-    version: @project.version@
+
 springdoc:
   swagger-ui:
     #For sorting endpoints alphabetically
     operationsSorter: alpha
     #For sorting tags alphabetically
     tagsSorter: alpha
-novel-ideas:
-  url: ${NOVEL-IDEAS-URL:https://servername.devstuff.org:10443}
