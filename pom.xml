@@ -7,14 +7,14 @@
     <groupId>com.klemmy</groupId>
     <artifactId>novel-ghostwriter</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <modules>
         <module>novel-ghostwriter-rest</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.3</version>
+        <version>2.7.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -24,10 +24,10 @@
         <codehaus-helper.version>3.3.0</codehaus-helper.version>
         <junit-launcher.version>1.9.0</junit-launcher.version>
         <modelmapper.version>3.1.0</modelmapper.version>
-        <novel-ideas.version>1.1.0</novel-ideas.version>
-        <spring-boot.version>2.7.3</spring-boot.version>
+        <novel-ideas.version>1.2.0</novel-ideas.version>
+        <spring-boot.version>2.7.4</spring-boot.version>
         <springdoc.version>1.6.11</springdoc.version>
-        <swagger-v3.version>2.2.2</swagger-v3.version>
+        <swagger-v3.version>2.2.3</swagger-v3.version>
     </properties>
 
     <dependencyManagement>
