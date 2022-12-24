@@ -9,7 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import org.springdoc.api.annotations.ParameterObject;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @AllArgsConstructor
@@ -42,11 +41,12 @@ public class GhostWriterController {
                               @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
                               @RequestParam(required = false)
                               @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endDate,
-                              @RequestParam(required = false) Set<BookState> state,
+                              @RequestParam(required = false) BookState state,
                               @ParameterObject @PageableDefault(size = 20, sort = "name") Pageable pageable) throws UnsupportedEncodingException {
     return ghostWriterService.loadAllBooks(queryTitle, startDate, endDate, state, pageable);
   }
 
+  @GetMapping("/book/{id}")
   @Operation(summary = "Get a Book", description = "Get a single book that represents a novel or script")
   @ApiResponses(value = {
       @ApiResponse(responseCode = "400", description = "Invalid"),

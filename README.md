@@ -26,14 +26,15 @@ This is also a Java Spring Boot demonstrator for a Rest application, but uses a 
   - [Environment Variables](#environment-variables)
     - [application.yml](#applicationyml)
   - [Message bus](#message-bus)
-    - [ActiveMQ](#activemq)
+    - [ActiveMQ Artemis](#activemq-artemis)
       - [Setup](#setup)
+      - [Info](#info)
     - [RabbitMQ](#rabbitmq)
     - [Kafka](#kafka)
 - [Coding Demo Explained](#coding-demo-explained)
   - [The client](#the-client)
   - [Message bus](#message-bus-1)
-    - [ActiveMQ](#activemq-1)
+    - [ActiveMQ Artemis](#activemq-artemis-1)
     - [RabbitMQ](#rabbitmq-1)
     - [Kafka](#kafka-1)
   - [Banner](#banner)
@@ -42,11 +43,11 @@ This is also a Java Spring Boot demonstrator for a Rest application, but uses a 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Technology Used
-- Java 17
+- Java 19
 - Maven
-- Spring Boot 2.7.4
+- Spring Boot 3.0.2
 - Spring Docs
-- ActiveMQ 5 (Classic)
+- ActiveMQ Artemis
 - Lombok
 - [Certificates](https://github.com/klemmy129/novel-ideas/blob/main/CERTS.md)
 
@@ -69,12 +70,20 @@ mvn clean package
 - NOVEL-IDEAS-URL _default https://servername.devstuff.org:10443_ (Novel-Ideas base URL)
 
 ### Message bus
-#### ActiveMQ
+#### ActiveMQ Artemis
 ##### Setup
-1. Download ActiveMQ binary from https://activemq.apache.org/download.html
-2. Uncompress the file
-3. For Linux Open a terminal and goto ActiveMQ -> bin
-4. To start ActiveMQ run `./activemq start`
+1. Download ActiveMQ Artemis binary from https://activemq.apache.org/download.html
+2. Uncompress the file. I recommend `/opt` and set `${ARTEMIS_HOME}` to the base path.
+3. Then in a terminal you need to create a broker. It will ask for a password
+```agsl
+cd /var/lib
+${ARTEMIS_HOME}/bin/artemis create mybroker
+```
+##### Info
+- To Start: `/var/lib/mybroker/bin/artemis run`
+- To Stop" `/var/lib/mybroker/bin/artemis stop`
+- Web Management Console: http://localhost:8161/console/auth/login
+- Documentation I used was: https://activemq.apache.org/components/artemis/documentation/latest/
 
 [novel-ideas](https://github.com/klemmy129/novel-ideas) is the producer, triggered by calling the Rest endpoint: Get `/book/{id}`
 The result will display a console message eg `c.k.n.g.listener.ActiveMQReceiver : Someone is looking at a book titled: 'Some Book title'`
@@ -102,7 +111,7 @@ novel-ideas:
     * One uses the RestTemple Bean and URL for Novel Ideas to instantiate Novel Ideas Client.
 
 ### Message bus
-#### ActiveMQ
+#### ActiveMQ Artemis
 By default, I have set `message-bus:type: none` which won't load or setup ActiveMQ.
 I made it an auto-configurable to be able to be a "consumer" (`ActiveMQReceiver`), this listens for a topic on the message bus,
 by adding `activemq` to the profile. This sets `message-bus:type: activemq`. It also has the broker URL and the topic name.
