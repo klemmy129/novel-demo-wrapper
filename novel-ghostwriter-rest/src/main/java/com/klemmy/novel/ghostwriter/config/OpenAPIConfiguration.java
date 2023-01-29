@@ -22,7 +22,7 @@ public class OpenAPIConfiguration extends SwaggerConfiguration {
         .addServersItem(new Server().url(contextPath))
         .info(new Info()
             .title("Novel Ghostwriter")
-            .description("This Rest backend is for demoing communications with Novel Ideas")
+            .description("This Rest backend is for demonstrating communications with Novel Ideas")
             .version(appVersion)
             .contact(new Contact()
                 .email("a.klemm@hotmail.com")

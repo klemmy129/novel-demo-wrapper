@@ -28,13 +28,13 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-@Tag(name = "GhostWriter", description = "A book represents a novel or script")
+@Tag(name = "GhostWriter", description = "Using RestTemplate Http Client. For requesting from Novel Ideas.")
 public class GhostWriterController {
 
   private final GhostWriterService ghostWriterService;
 
   @GetMapping("/")
-  @Operation(summary = "Get all Books", description = "List all the Books that represents a novel or script")
+  @Operation(summary = "Get all Books", description = "List all the Books that represents a novel or script.")
   @ApiResponse(responseCode = "400", description = "Invalid")
   public Page<BookDto> getAll(@RequestParam(required = false) String queryTitle,
                               @RequestParam(required = false)
@@ -49,8 +49,8 @@ public class GhostWriterController {
   @GetMapping("/book/{id}")
   @Operation(summary = "Get a Book", description = "Get a single book that represents a novel or script")
   @ApiResponses(value = {
-      @ApiResponse(responseCode = "400", description = "Invalid"),
-      @ApiResponse(responseCode = "404", description = "Not Found")})
+          @ApiResponse(responseCode = "400", description = "Invalid"),
+          @ApiResponse(responseCode = "404", description = "Not Found")})
   public BookDto getBook(@PathVariable Integer id) {
     return ghostWriterService.getBook(id);
   }
