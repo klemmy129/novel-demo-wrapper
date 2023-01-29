@@ -94,7 +94,7 @@ _COMING SOON_
 _COMING SOON_
 
 ## Coding Demo Explained
-### The client
+### The client (RestTemplate)
 The GhostWriteService uses the NovelIdeasClient bean to call Novel Ideas Rest interface. 
 To do this there were some things that needed to be setup.
 * In [application.yml](novel-ghostwriter-rest/src/main/resources/application.yml) add the URL to the running version of Novel Ideas eg 
@@ -110,6 +110,22 @@ novel-ideas:
     * One for creating a RestTemplate. I created two that achieve the same thing using two different libraries 
     * One uses the RestTemple Bean and URL for Novel Ideas to instantiate Novel Ideas Client.
 
+### The client3 (Spring Boot 3 declarative interface with a WebClient)
+The GhostWriteService uses the NovelIdeasClient3 interface that used with a proxy to create a WebClient.
+To do this there were some things that needed to be setup.
+* In [application.yml](novel-ghostwriter-rest/src/main/resources/application.yml) add the URL to the running version of Novel Ideas eg
+ ```
+novel-ideas:
+   url: https://servername.devstuff.org:10443
+  ``` 
+* Add the `novel-ideas-client-starter` to the POM file. This brings in the API DTOs, the client3, the property classes/records, Configurations and the AutoConfiguration.
+  * There are two properties records:
+    * One for SSL (used by the Netty WebClient)
+    * One for the URL to Novel Ideas.
+  * There are two Configuration classes:
+    * One Declarative Interface that reflects the RestControllers you want a client for.
+    * One uses the Declarative Interface and URL for Novel Ideas to instantiate Novel Ideas Client3 (WebClient).
+    * 
 ### Message bus
 #### ActiveMQ Artemis
 By default, I have set `message-bus:type: none` which won't load or setup ActiveMQ.
